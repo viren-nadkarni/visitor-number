@@ -46,7 +46,7 @@ def index():
     img.save(out, format='JPEG')
     out.seek(0)
 
-    return send_file(out, mimetype='image/jpeg')
+    return send_file(out, cache_timeout=0, mimetype='image/jpeg')
 
 
 if __name__ == '__main__':
