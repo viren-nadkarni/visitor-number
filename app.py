@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
-    'DATABASE_URI', 'sqlite:////tmp/test.db')
+    'DATABASE_URL', 'sqlite:////tmp/test.db')
 
 db = flask_sqlalchemy.SQLAlchemy(app)
 
