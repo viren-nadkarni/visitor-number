@@ -13,6 +13,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
 
 db = flask_sqlalchemy.SQLAlchemy(app)
 
+PORT = os.environ.get('PORT', 5000)
+
 
 class Counter(db.Model):
     host = db.Column(db.String(128), primary_key=True)
@@ -48,4 +50,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=PORT, debug=True)
